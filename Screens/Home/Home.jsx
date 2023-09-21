@@ -8,7 +8,7 @@ import styles from "./Home.style";
 import dataCategories from "../../data/dataCategories";
 import { CategoryItem } from "./components";
 
-const Home = ({ setCategorySelected }) => {
+const Home = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <Header title={"Categories"} />
@@ -20,11 +20,11 @@ const Home = ({ setCategorySelected }) => {
                 renderItem={({ item }) => (
                     <CategoryItem
                         category={item.title}
-                        setCategorySelected={setCategorySelected}
+                        navigation = {navigation}
                     />
                 )}
             />
-            <StatusBar style="light" />
+            
         </View>
     );
 };
